@@ -3,9 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>React In Pure <form></form></title>
+        <title>React In Pure Form <form></form></title>
     </head>
     <body>
-        <h2>React in pure form</h2>
+        <!-- Root container where React will render UI -->
+        <div id="root">
+
+        </div>
+        <!-- React CDN  -->
+        <script
+            src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+        </script>
+
+        <!-- React Code  -->
+        <script>
+               // React Component
+            function App(){
+                // return React.createElement("h1",{},"React in pure form");
+                return React.createElement("div",{},React.createElement("h2",{},"Hello Div"))
+            }
+            App();
+
+        const rootContainer=document.getElementById("root")
+        const root=ReactDOM.createRoot(rootContainer)
+        root.render(App())
+        </script>
     </body>
 </html>
