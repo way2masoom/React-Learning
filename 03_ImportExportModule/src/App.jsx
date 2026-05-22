@@ -1,8 +1,10 @@
 import './App.css'
 
-import MyButton from './MyButton'
-import { SqureNumber, Addition } from './MyButton'
+// import MyButton from './MyButton'
+// import { SqureNumber, Addition } from './MyButton'
 
+// importing button as well as other function in one plac
+import MyButton, { SqureNumber, Addition } from './MyButton'
 
 function App() {
   return (
