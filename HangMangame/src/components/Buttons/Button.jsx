@@ -6,7 +6,7 @@ function Button({ text, onClickHandler }) {
     return (
         <button
             onClick={onClickHandler}
-            className="btn"
+            className="text-white p-2 bg-black m-10 hover:bg-amber-400"
         > {text}</button >
     )
 
