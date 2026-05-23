@@ -1,17 +1,12 @@
-// Button compoent
+import './Button.css';               // importing button style 
 
+// Button compoent
 function Button({ text, onClickHandler }) {
     console.log(text);
     return (
         <button
             onClick={onClickHandler}
-            style={{
-                padding: "10px",
-                margin: "20px",
-                borderRadius: "5px",
-                color: "white",
-                backgroundColor: "black"
-            }}
+            className="btn"
         > {text}</button >
     )
 
