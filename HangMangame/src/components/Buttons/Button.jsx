@@ -5,7 +5,14 @@ function Button({ text, onClickHandler }) {
     return (
         <button
             onClick={onClickHandler}
-        >{text}</button>
+            style={{
+                padding: "10px",
+                margin: "20px",
+                borderRadius: "5px",
+                color: "white",
+                backgroundColor: "black"
+            }}
+        > {text}</button >
     )
 
 }
