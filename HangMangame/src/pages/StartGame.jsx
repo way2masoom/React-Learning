@@ -6,7 +6,6 @@ function StartGame() {
     return (
         <>
             <div>
-                <h1 className="text-4xl text-yellow-500 m-5 ">HangMan Game</h1>
                 <Button text="StartGame" styleType="sucess" onClickHandler={() => {
                     console.log("game LOADED");
 
