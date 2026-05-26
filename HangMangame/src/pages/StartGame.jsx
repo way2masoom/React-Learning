@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
+import TextInputFormContainer from "../components/TextInputForm/TextInputFormContainer";
+
+
+
+
 // start game component
-
-import Button from "../components/Buttons/Button";
-
 function StartGame() {
     return (
         <>
             <div>
-                <Button text="StartGame" styleType="sucess" onClickHandler={() => {
-                    console.log("game LOADED");
-
-                }} />
-                <p className="m-2 text-blue-400">Click on the button to start the game</p>
+                <h1 className="text-3xl font-bold mb-4">Welcome to Hangman Game!</h1>
+                <TextInputFormContainer />
+                <Link to="/play" className="text-blue-500 hover:text-blue-700">Play Game</Link>
             </div>
         </> /* this called react fragment  */
     )
