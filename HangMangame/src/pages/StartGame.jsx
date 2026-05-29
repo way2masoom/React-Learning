@@ -12,7 +12,7 @@ function StartGame() {
                 <h1 className="text-3xl font-bold mb-4">Welcome to Hangman Game!</h1>
                 <TextInputFormContainer />
                 <Link to="/play" className="text-blue-500 hover:text-blue-700">Play Game</Link>
-            </div>
+            </div>     
         </> /* this called react fragment  */
     )
 }

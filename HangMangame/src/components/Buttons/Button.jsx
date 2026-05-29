@@ -1,8 +1,8 @@
-import getButtonStyling from "./getButton"; // importing helper btn function
+import getButtonStyling from './getButton'; // importing helper btn function
 
 
 // Button compoent
-function Button({ text,type='button',onClickHandler, styleType = "primary" }) {
+function Button({ text, type = 'button', onClickHandler, styleType = "primary" }) {
     console.log(text);
     return (
         <button
