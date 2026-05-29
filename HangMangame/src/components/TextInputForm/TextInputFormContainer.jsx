@@ -18,19 +18,12 @@ function TextInputFormContainer() {
 
         if (value) {
             // if we have something in the input field, we navigate to the play page
-            navigate(`/play?text=${value}`)
+            navigate("/play", {
+                state: {
+                    wordSelected: value
+                }
+            })
         }
-
-
-
-        // if (value) {
-        //     // if we have something in the input field, we navigate to the play page
-        //     navigate("/play", {
-        //         state: {
-        //             wordSelected: value
-        //         }
-        //     })
-        // }
     }
 
     // Handle input change
