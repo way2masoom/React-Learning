@@ -4,9 +4,13 @@ function MaskedText({ text, guessedLetters }) {
     const maskedString = getMaskedSting(text, guessedLetters)
     return (
         <>
-            <h1>masked string {maskedString}</h1>
+            {maskedString.map((letter, index) => {
+                return (
+                    <span key={index} className="mx-1 ">{letter}</span>
+                )
+            })}
         </>
-    ) 
+    )
 }
 
 export default MaskedText;

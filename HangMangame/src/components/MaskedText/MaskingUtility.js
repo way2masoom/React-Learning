@@ -23,6 +23,6 @@ export function getMaskedSting(originalWord, guessedLetters) {
         }
     });
 
-    return result.join(' ')
+    return result;
 
 }
