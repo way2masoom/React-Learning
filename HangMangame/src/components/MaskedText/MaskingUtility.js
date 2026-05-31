@@ -10,8 +10,12 @@
 
 
 // Utility/Helper `function for Hidden text`
-export function getMaskedSting(originalWord, guessedLetters) {
-    guessedLetters = guessedLetters.map(Letters => Letters.toUpperCase()) // 
+export function getMaskedString(originalWord, guessedLetters) {
+
+    console.log("guessed letters", guessedLetters);
+    guessedLetters = guessedLetters.map(Letters =>
+        Letters.toUpperCase()
+    ); // 
 
     const guessedLetterSet = new Set(guessedLetters)
 
