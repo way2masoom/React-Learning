@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import MaskedText from "../components/MaskedText/MaskedText";
 import LetterButtons from "../components/LetterButtons/LetterButtons";
 import { useState } from "react";
+import Hangman from "../components/HangMan/HangMan";
 
 
 // Play Game Page 
@@ -12,11 +13,20 @@ function PlayGame() {
     const word = location.state?.wordSelected;
 
     const [guessedLetters, setGuessedLetters] = useState([])
+    const [steps, setSteps] = useState(0)
+
 
 
     function handleLetterClick(letter) {
         console.log("Letter Clicked: ", letter);
         setGuessedLetters([...guessedLetters, letter])
+
+        if (word.toUpperCase().includes(letter)) {
+            console.log("Correct Guess!");
+        } else {
+            console.log("Wrong Guess!");
+            setSteps(steps + 1)
+        }
     }
 
     return (
@@ -30,6 +40,10 @@ function PlayGame() {
 
             <div>
                 <LetterButtons text={word} guessedLetters={guessedLetters} onLetterClick={handleLetterClick} />
+            </div>
+
+            <div>
+                <Hangman steps={steps} />
             </div>
 
             <Link to="/start" className="text-blue-500 hover:text-blue-700">Go Back to Start</Link>
