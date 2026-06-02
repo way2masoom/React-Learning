@@ -6,12 +6,16 @@ function App() {
   // let counter = 15;
 
   const addValue = () => {
-    setCounter(counter + 1);
+    if (counter < 20) {
+      setCounter(counter + 1);
+    }
     console.log("value added", counter);
   }
 
   const removeValue = () => {
-    setCounter(counter - 1);
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
     console.log("Value removed", counter);
 
   }
@@ -26,7 +30,9 @@ function App() {
         <button type="button" className="counter" onClick={(addValue)}>
           Added Value
         </button>
+        <p>counter is not go above 20</p>
         <button type='button' className='counter' onClick={removeValue} >Removed Value</button>
+        <p>counter is not go bellow 0</p>
       </section>
     </>
   )
