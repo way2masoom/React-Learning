@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import './App.css'
+import Counter from './interviewQuestion/counter';
 
 function App() {
   const [counter, setCounter] = useState(15);
@@ -33,6 +35,11 @@ function App() {
         <p>counter is not go above 20</p>
         <button type='button' className='counter' onClick={removeValue} >Removed Value</button>
         <p>counter is not go bellow 0</p>
+      </section>
+
+      <section id='center'>
+       <Counter/>
+
       </section>
     </>
   )
