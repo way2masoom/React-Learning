@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TextInputForm from "./TextInputForm";
 import { useNavigate } from "react-router-dom";
 
@@ -44,33 +44,38 @@ function TextInputFormContainer() {
     }
 
     // useeffect function 
-    useEffect(() => {
-        console.log("Component first load"); // not on update
-    }, []) // passing empty dependency array
+    // useEffect(() => {
+    //     console.log("Component first load"); // not on update
+    // }, []) // passing empty dependency array
 
-    useEffect(() => {
-        console.log("Components loded and changed");
-    })
+    // useEffect(() => {
+    //     console.log("Components loded and changed");
+    // })
 
-    useEffect(() => {
-        console.log("component first loaded and updated value");
-    }, [value])
+    // useEffect(() => {
+    //     console.log("component first loaded and updated value");
+    // }, [value])
 
-    useEffect(() => {
-        console.log("Input type changed");
-    }, [inputType])
+    // useEffect(() => {
+    //     console.log("Input type changed");
+    // }, [inputType])
 
 
 
 
     return (
-        <TextInputForm
-            inputType={inputType}
-            handleFormSubmit={handleFormSubmit}
-            handleTextInputChange={handleTextInputChange}
-            handleShowHideClick={handleShowHideClick}
-        />
+        <>
+            <TextInputForm
+                inputType={inputType}
+                handleFormSubmit={handleFormSubmit}
+                handleTextInputChange={handleTextInputChange}
+                handleShowHideClick={handleShowHideClick}
+            />
+
+
+        </>
     )
 }
+
 
 export default TextInputFormContainer;
