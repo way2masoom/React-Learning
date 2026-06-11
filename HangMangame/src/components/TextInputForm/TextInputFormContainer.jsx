@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextInputForm from "./TextInputForm";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +15,6 @@ function TextInputFormContainer() {
         event.preventDefault();
         console.log("Form Submitted", value);
 
-
         if (value) {
             // if we have something in the input field, we navigate to the play page
             navigate("/play", {
@@ -28,14 +27,12 @@ function TextInputFormContainer() {
 
     // Handle input change
     function handleTextInputChange(event) {
-        console.log("Text Input changed");
         console.log(event.target.value);
         setValue(event.target.value)
     }
 
     // Show Hide click btn function
     function handleShowHideClick() {
-        console.log("Show/Hide Button clicked");
 
         if (inputType === "password") {
             setInputType("text");
@@ -45,6 +42,26 @@ function TextInputFormContainer() {
         console.log(inputType);
 
     }
+
+    // useeffect function 
+    useEffect(() => {
+        console.log("Component first load"); // not on update
+    }, []) // passing empty dependency array
+
+    useEffect(() => {
+        console.log("Components loded and changed");
+    })
+
+    useEffect(() => {
+        console.log("component first loaded and updated value");
+    }, [value])
+
+    useEffect(() => {
+        console.log("Input type changed");
+    }, [inputType])
+
+
+
 
     return (
         <TextInputForm
