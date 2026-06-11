@@ -35,16 +35,23 @@ function PlayGame() {
             <p className="text-lg mb-6 text-green-600">Welcome to the game!</p>
             <p className="text-xl font-semibold">Selected Word: {word}</p>
 
-            <MaskedText text={word} guessedLetters={guessedLetters} />
+            {word && (
+                <>
+                    <MaskedText text={word} guessedLetters={guessedLetters} />
+                    <br />
+
+                    <div>
+                        <LetterButtons text={word} guessedLetters={guessedLetters} onLetterClick={handleLetterClick} />
+                    </div>
+
+                    <div>
+                        <Hangman steps={steps} />
+                    </div>
+
+                </>
+            )}
+            <Link to="/" className="text-blue-500 hover:text-blue-700">Home page</Link>
             <br />
-
-            <div>
-                <LetterButtons text={word} guessedLetters={guessedLetters} onLetterClick={handleLetterClick} />
-            </div>
-
-            <div>
-                <Hangman steps={steps} />
-            </div>
 
             <Link to="/start" className="text-blue-500 hover:text-blue-700">Go Back to Start</Link>
         </div>
