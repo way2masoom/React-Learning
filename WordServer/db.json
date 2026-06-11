@@ -1,0 +1,124 @@
+{
+    "words": [
+        {
+            "wordValue": "MANGO",
+            "wordHint": "A sweet tropical fruit"
+        },
+        {
+            "wordValue": "BANANA",
+            "wordHint": "A long yellow fruit"
+        },
+        {
+            "wordValue": "APPLE",
+            "wordHint": "A common red or green fruit"
+        },
+        {
+            "wordValue": "ORANGE",
+            "wordHint": "A citrus fruit and a color"
+        },
+        {
+            "wordValue": "PINEAPPLE",
+            "wordHint": "A tropical fruit with a spiky skin"
+        },
+        {
+            "wordValue": "NEPAL",
+            "wordHint": "Home of Mount Everest"
+        },
+        {
+            "wordValue": "INDIA",
+            "wordHint": "A country famous for the Taj Mahal"
+        },
+        {
+            "wordValue": "JAPAN",
+            "wordHint": "Known as the Land of the Rising Sun"
+        },
+        {
+            "wordValue": "BRAZIL",
+            "wordHint": "Famous for football and the Amazon rainforest"
+        },
+        {
+            "wordValue": "CANADA",
+            "wordHint": "A country known for maple syrup"
+        },
+        {
+            "wordValue": "KATHMANDU",
+            "wordHint": "Capital city of Nepal"
+        },
+        {
+            "wordValue": "DELHI",
+            "wordHint": "Capital city of India"
+        },
+        {
+            "wordValue": "PARIS",
+            "wordHint": "City of the Eiffel Tower"
+        },
+        {
+            "wordValue": "TOKYO",
+            "wordHint": "Capital city of Japan"
+        },
+        {
+            "wordValue": "LION",
+            "wordHint": "Known as the king of the jungle"
+        },
+        {
+            "wordValue": "ELEPHANT",
+            "wordHint": "The largest land animal"
+        },
+        {
+            "wordValue": "TIGER",
+            "wordHint": "A big cat with black stripes"
+        },
+        {
+            "wordValue": "GIRAFFE",
+            "wordHint": "The tallest animal in the world"
+        },
+        {
+            "wordValue": "CRICKET",
+            "wordHint": "A bat and ball sport popular in South Asia"
+        },
+        {
+            "wordValue": "FOOTBALL",
+            "wordHint": "The world's most popular sport"
+        },
+        {
+            "wordValue": "BASKETBALL",
+            "wordHint": "A sport played with a hoop and ball"
+        },
+        {
+            "wordValue": "REACT",
+            "wordHint": "A popular JavaScript library for building user interfaces"
+        },
+        {
+            "wordValue": "JAVASCRIPT",
+            "wordHint": "Programming language used for web development"
+        },
+        {
+            "wordValue": "PYTHON",
+            "wordHint": "A beginner-friendly programming language"
+        },
+        {
+            "wordValue": "MONGODB",
+            "wordHint": "A NoSQL database"
+        },
+        {
+            "wordValue": "COMPUTER",
+            "wordHint": "An electronic machine used for work and entertainment"
+        },
+        {
+            "wordValue": "KEYBOARD",
+            "wordHint": "Used to type on a computer"
+        },
+        {
+            "wordValue": "MONITOR",
+            "wordHint": "Displays images and videos from a computer"
+        },
+        {
+            "wordValue": "INTERNET",
+            "wordHint": "A global network connecting computers worldwide"
+        },
+        {
+            "wordValue": "HANGMAN",
+            "wordHint": "The game you are playing right now"
+        }
+    ]
+}
