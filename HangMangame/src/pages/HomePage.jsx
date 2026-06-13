@@ -4,20 +4,24 @@ import { useEffect, useState } from "react";
 
 function HomePage() {
     // creating a work to send to play page
-    const [word, setWord] = useState('');
+    // const [word, setWord] = useState('');
+    const [word, setWord] = useState(null);
 
-    // Creating a function to feacth words 
-    async function featchWords() {
-        const response = await fetch('http://localhost:3000/words');
-        const data = await response.json();
-        console.log(data);
-        
-        const randomIndex = Math.floor(Math.random() * data.length)
-        console.log(data[randomIndex]);
-        setWord(data[randomIndex].wordValue)
-    }
 
     useEffect(() => {
+
+        // Creating a function to feacth words 
+        async function featchWords() {
+            const response = await fetch('http://localhost:3000/words');
+            const data = await response.json();
+            console.log(data);
+
+            const randomIndex = Math.floor(Math.random() * data.length)
+            console.log(data[randomIndex]);
+            // setWord(data[randomIndex].wordValue)
+            setWord(data[randomIndex])
+        }
+
         featchWords();
     }, [])
 

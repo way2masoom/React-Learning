@@ -1,7 +1,7 @@
 import Button from "../Buttons/Button";
 import TextInput from "../TextInput/TextInput";
 
-function TextInputForm({ inputType, handleFormSubmit, handleTextInputChange, handleShowHideClick }) {
+function TextInputForm({ inputType, handleFormSubmit, handleTextInputChange, handleHintInputChange, handleShowHideClick }) {
 
     return (
         <form onSubmit={handleFormSubmit}>
@@ -12,6 +12,15 @@ function TextInputForm({ inputType, handleFormSubmit, handleTextInputChange, han
                     label="Enter a Phrase or Word"
                     placeholder="Enter a WORD for game"
                     onChangeHandler={handleTextInputChange}
+                />
+            </div>
+
+            <div>
+                <TextInput
+                    type="text"
+                    label="Enter Hint"
+                    placeholder="Enter a Hint"
+                    onChangeHandler={handleHintInputChange}
                 />
             </div>
 

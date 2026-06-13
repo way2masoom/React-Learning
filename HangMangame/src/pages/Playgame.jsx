@@ -10,10 +10,15 @@ import Hangman from "../components/HangMan/HangMan";
 function PlayGame() {
     // Access data
     const location = useLocation();
-    const word = location.state?.wordSelected;
+    const wordData = location.state?.wordSelected;
+
+    const word = wordData?.wordValue;
+    const hint = wordData?.wordHint;
+ 
 
     const [guessedLetters, setGuessedLetters] = useState([])
-    const [steps, setSteps] = useState(0)
+    const [steps, setSteps] = useState(0);
+
 
 
 
@@ -33,7 +38,7 @@ function PlayGame() {
         <div>
             <h1 className="text-3xl font-bold mb-4 ">Play Game</h1>
             <p className="text-lg mb-6 text-green-600">Welcome to the game!</p>
-            <p className="text-xl font-semibold">Selected Word: {word}</p>
+            <p className="text-xl font-semibold">Hint: {hint}</p>
 
             {word && (
                 <>

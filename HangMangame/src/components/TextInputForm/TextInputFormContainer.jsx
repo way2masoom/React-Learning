@@ -6,9 +6,17 @@ import { useNavigate } from "react-router-dom";
 function TextInputFormContainer() {
 
     const [inputType, setInputType] = useState("password") // state to hold the type of the input field, default is password
+
     const [value, setValue] = useState("") // state to hold the value of the input field
+    const [hint, setHint] = useState("");
+
 
     const navigate = useNavigate() // useNavigate hook to programmatically navigate to another route
+
+
+    function handleHintInputChange(event) {
+        setHint(event.target.value);
+    }
 
     // Prevent form submit refresh
     function handleFormSubmit(event) {
@@ -19,7 +27,10 @@ function TextInputFormContainer() {
             // if we have something in the input field, we navigate to the play page
             navigate("/play", {
                 state: {
-                    wordSelected: value
+                    wordSelected: {
+                        wordValue: value,
+                        wordHint: hint
+                    }
                 }
             })
         }
@@ -69,6 +80,7 @@ function TextInputFormContainer() {
                 inputType={inputType}
                 handleFormSubmit={handleFormSubmit}
                 handleTextInputChange={handleTextInputChange}
+                handleHintInputChange={handleHintInputChange}
                 handleShowHideClick={handleShowHideClick}
             />
 
