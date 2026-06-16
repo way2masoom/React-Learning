@@ -10,5 +10,9 @@ const waitingForSomethig = (ms) => {
 
 export default function SlowComponent() {
     waitingForSomethig(1000);
-    return null;
+    return (
+        <>
+        <h1>Slow Component</h1>
+        </>
+    );
 }
