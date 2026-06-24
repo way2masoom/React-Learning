@@ -56,6 +56,9 @@ React-Learning/
 
 ```
 
-#To run server 
+# To run server 
+```bash
 
  npx json-server db.json
+ 
+ ```
