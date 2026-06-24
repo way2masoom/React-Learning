@@ -54,6 +54,8 @@ React-Learning/
 ├── projects/
 └── notes/
 
+```
+
 #To run server 
 
-``` npx json-server db.json
+ npx json-server db.json
