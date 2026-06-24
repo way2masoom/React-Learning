@@ -53,3 +53,7 @@ React-Learning/
 ├── 07-context-api/
 ├── projects/
 └── notes/
+
+#To run server 
+
+``` npx json-server db.json
