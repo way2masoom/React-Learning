@@ -1,6 +1,6 @@
 
 // Simulate a slow component by blocking the main thread for a specified amount of time
-const waitingForSomethig = (ms) => { 
+const waitingForSomethig = (ms) => {
     const start = Date.now();
     let now = start
     while (now - start < ms) {
@@ -12,7 +12,7 @@ export default function SlowComponent() {
     waitingForSomethig(1000);
     return (
         <>
-        <h1>Slow Component</h1>
+            <h2>Slow Component</h2>
         </>
     );
 }

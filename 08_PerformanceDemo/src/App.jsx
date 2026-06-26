@@ -2,20 +2,24 @@
 import './App.css'
 import SlowComponent from './SlowComponent/SlowComponent';
 import ButtonWithModal from './Components/ButtonWithModal';
+import RefectorComponents from './Components/RefectorComponents';
 
 function App() {
 
-
   return (
     <>
-    
-      <div>Something Done here | NavBar</div>
+      <RefectorComponents>
+        <>
+          <div>Something Done here | NavBar</div>
 
-      {/* Adding modal here */}
-      <ButtonWithModal/>
-      <div>Somethig Done here | Body</div>
-      <SlowComponent />
+          {/* Adding modal here */}
+          <ButtonWithModal />
+          <br />
+          <div>Somethig Done here | Body</div>
+          <SlowComponent />
+        </>
 
+      </RefectorComponents>
     </>
   );
 }

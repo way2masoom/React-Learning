@@ -1,5 +1,5 @@
 // creating a simple modal component that can be reused across the application
-export default function Modal({setIsOpen}) {
+export default function Modal({ setIsOpen }) {
     return (
         <div className="modal" >
             <h2>Modal</h2>
