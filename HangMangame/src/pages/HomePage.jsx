@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import Button from "../components/Buttons/Button";
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { WordContext } from "../components/Context/WordContext";
 
 function HomePage() {
-    // creating a work to send to play page
-    // const [word, setWord] = useState('');
-    const [word, setWord] = useState(null);
+
+    const { setWordList,word,setWord } = useContext(WordContext)
 
 
     useEffect(() => {
@@ -15,6 +15,8 @@ function HomePage() {
             const response = await fetch('http://localhost:3000/words');
             const data = await response.json();
             console.log(data);
+
+            setWordList([...data]) 
 
             const randomIndex = Math.floor(Math.random() * data.length)
             console.log(data[randomIndex]);

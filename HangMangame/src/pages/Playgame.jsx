@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import MaskedText from "../components/MaskedText/MaskedText";
 import LetterButtons from "../components/LetterButtons/LetterButtons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Hangman from "../components/HangMan/HangMan";
+import { WordContext } from "../components/Context/WordContext";
 
 
 // Play Game Page 
@@ -14,11 +15,11 @@ function PlayGame() {
 
     const word = wordData?.wordValue;
     const hint = wordData?.wordHint;
- 
 
     const [guessedLetters, setGuessedLetters] = useState([])
     const [steps, setSteps] = useState(0);
 
+    const { wordList } = useContext(WordContext)
 
 
 
@@ -42,6 +43,10 @@ function PlayGame() {
 
             {word && (
                 <>
+                    {wordList.map(wordObject =>
+                        <li key={wordObject.id}>{wordObject.wordValue}</li>)
+                    }
+                    
                     <MaskedText text={word} guessedLetters={guessedLetters} />
                     <br />
 
