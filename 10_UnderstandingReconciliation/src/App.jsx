@@ -37,9 +37,13 @@ function App() {
 
         {/* TO SOLVE THIS RECONCILLATION  */}
 
-        {isStudent ? <input type='text' placeholder='Enter your School Name' /> : null}
+        {/* {isStudent ? <input type='text' placeholder='Enter your School Name' /> : null}
+        {!isStudent ? <input type='text' placeholder='Enter your Company Name' /> : null} */}
 
-        {!isStudent ? <input type='text' placeholder='Enter your Company Name' /> : null}
+        
+        {/* Another way to reconcillation   */}
+        {isStudent ? <input type='text' placeholder='Enter Your School name' key="school" /> :
+          <input type='text' placeholder='Enter Your company name' key="company"/>}
 
         <br />
         <button type='submit'>Sumit</button>
