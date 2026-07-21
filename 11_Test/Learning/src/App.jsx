@@ -1,8 +1,8 @@
 import Food from "./Food"
 import Fotter from "./Fotter"
 import Header from "./Header"
+import CardWithProps from "./components/CardWithProps"
 import Card from "./components/Card"
-import javaImage from './assets/java.png'
 
 
 function App() {
@@ -14,23 +14,43 @@ function App() {
       <Fotter />
       <h2 style={{ color: "red", textAlign: "center" }} >Part two of learning</h2>
 
-      <div className="cards">
-        <Card
-          image={javaImage}
-          title="Java programming"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dicta!"
-        />
+      {/* Normal card  */}
+      <div className="normalCards">
+        <Card />
+        <Card />
+        <Card />
+      </div>
 
-        <Card
+      {/* Cards with props value  */}
+      <div className="cards">
+        <CardWithProps
           image="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
           title="Java Programming"
-          description="Learn Java from scratch."
+          description="Java is a powerful object-oriented programming language used for Android, enterprise applications, and backend development."
         />
 
-        <Card 
-          image="https://weassemble.team/wp-content/uploads/2022/06/Rectangle-33-2.png"
-          title="Java programming"
-          description="java is a fundamental programming language to learn"
+        <CardWithProps
+          image="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+          title="Python"
+          description="Python is a simple and versatile programming language widely used in AI, data science, automation, and web development."
+        />
+
+        <CardWithProps
+          image="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+          title="JavaScript"
+          description="JavaScript is the language of the web, used to build interactive websites and modern web applications."
+        />
+
+        <CardWithProps
+          image="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg"
+          title="C++"
+          description="C++ extends C with object-oriented programming and is widely used in game development, competitive programming, and software engineering."
+        />
+
+        <CardWithProps
+          image="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+          title="React"
+          description="React is a JavaScript library for building fast, reusable, and interactive user interfaces."
         />
 
       </div>
