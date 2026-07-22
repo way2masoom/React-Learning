@@ -4,7 +4,6 @@ import Header from "./Header"
 import CardWithProps from "./components/CardWithProps"
 import Card from "./components/Card"
 import Button from "./components/Button"
-import Student from "./components/Student.Jsx"
 
 
 function App() {
