@@ -60,7 +60,38 @@ img {
     margin: 20px;
     border: none;
 }
-.button:hover{
+
+.button:hover {
     background-color: brown;
-    color: white ;
+    color: white;
+}
+
+.studentDetails {
+    display: flex;
+    justify-content: center;
+    margin: 20px
+}
+
+.student {
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 22px;
+}
+
+.welcome-msg {
+    background-color: green;
+    color: white;
+    padding: 20px;
+    font-size: 22px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.login-msg {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    font-size: 22px;
+    display: inline-block;
+    border-radius: 5px;
 }
