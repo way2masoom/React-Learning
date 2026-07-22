@@ -3,6 +3,8 @@ import Fotter from "./Fotter"
 import Header from "./Header"
 import CardWithProps from "./components/CardWithProps"
 import Card from "./components/Card"
+import Button from "./components/Button"
+import Student from "./components/Student.Jsx"
 
 
 function App() {
@@ -54,6 +56,22 @@ function App() {
         />
 
       </div>
+
+      <div className="styleInReact">
+        {/* How to style react components  
+          1. External 
+          2. Module
+          3. Inline
+        */
+          <Button
+            label="MyButton"
+            onClick={() => {
+              alert("Button Clicked!");
+            }}
+          />
+        }
+      </div>
+
 
     </>
   )

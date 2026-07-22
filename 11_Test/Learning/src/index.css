@@ -1,10 +1,17 @@
-
-img{
+img {
     width: auto;
     height: 100px;
 }
 
-.card{
+.normalCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 16px;
+}
+
+.card {
     border: 1px solid black;
     border-radius: 8px;
     box-shadow: 5px 5px 5px rgb(22, 17, 11);
@@ -14,28 +21,46 @@ img{
     padding: 20px;
 }
 
-.card .CardImage{
-    max-width: 60%;
-    height: auto;
+.card .CardImage {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
     border-radius: 50%;
-    margin-bottom: 10px;
 }
 
-.card .cardTitle{
-    font-size:22px ;
+.card .cardTitle {
+    font-size: 22px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-     color: brown;
+    color: brown;
 }
 
-.card .cardDes{
+.card .cardDes {
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
     color: rgb(21, 9, 9);
 }
 
-.cards{
+.cards {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+}
+
+.styleInReact {
+    margin-top: 20px;
+}
+
+.button {
+    padding: 20px;
+    color: black;
+    background-color: rgb(62, 217, 244);
+    margin: 0 auto;
+    border-radius: 5px;
+    margin: 20px;
+    border: none;
+}
+.button:hover{
+    background-color: brown;
+    color: white ;
 }
