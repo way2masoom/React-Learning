@@ -95,3 +95,22 @@ img {
     display: inline-block;
     border-radius: 5px;
 }
+
+.conditionalrendring {
+    margin: 20px;
+}
+
+.react-List {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 20px;
+    border: 2px solid gray;
+    margin: 25px;
+}
+
+.listHeading {
+    color: red;
+    font-size: 25px;
+    text-decoration: underline;
+}
