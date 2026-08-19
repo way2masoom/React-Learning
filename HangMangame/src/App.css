@@ -1,3 +1,8 @@
-body {
-  background-color: bisque;
+/* Global custom styles and animations */
+.font-fredoka {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
 }

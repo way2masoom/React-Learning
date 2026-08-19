@@ -1,93 +1,90 @@
 import { useState } from "react";
 import TextInputForm from "./TextInputForm";
 import { useNavigate } from "react-router-dom";
-
+import { getRandomWord } from "../../utils/wordBank";
+import { sounds } from "../../utils/audioUtility";
 
 function TextInputFormContainer() {
-
-    const [inputType, setInputType] = useState("password") // state to hold the type of the input field, default is password
-
-    const [value, setValue] = useState("") // state to hold the value of the input field
+    const [inputType, setInputType] = useState("password");
+    const [value, setValue] = useState("");
     const [hint, setHint] = useState("");
+    const [error, setError] = useState("");
 
-
-    const navigate = useNavigate() // useNavigate hook to programmatically navigate to another route
-
+    const navigate = useNavigate();
 
     function handleHintInputChange(event) {
         setHint(event.target.value);
+        if (error) setError("");
     }
 
-    // Prevent form submit refresh
+    function handleTextInputChange(event) {
+        const text = event.target.value.toUpperCase();
+        setValue(text);
+        if (error) setError("");
+    }
+
+    function handleShowHideClick() {
+        sounds.playClick();
+        setInputType(prev => (prev === "password" ? "text" : "password"));
+    }
+
+    function handleRandomWordFill() {
+        sounds.playClick();
+        const randomItem = getRandomWord();
+        setValue(randomItem.wordValue);
+        setHint(randomItem.wordHint);
+        setInputType("password");
+        setError("");
+    }
+
     function handleFormSubmit(event) {
         event.preventDefault();
-        console.log("Form Submitted", value);
 
-        if (value) {
-            // if we have something in the input field, we navigate to the play page
-            navigate("/play", {
-                state: {
-                    wordSelected: {
-                        wordValue: value,
-                        wordHint: hint
-                    }
-                }
-            })
+        const cleanWord = value.trim().toUpperCase();
+        if (!cleanWord) {
+            setError("Please enter a secret word!");
+            sounds.playWrong();
+            return;
         }
-    }
 
-    // Handle input change
-    function handleTextInputChange(event) {
-        console.log(event.target.value);
-        setValue(event.target.value)
-    }
-
-    // Show Hide click btn function
-    function handleShowHideClick() {
-
-        if (inputType === "password") {
-            setInputType("text");
-        } else {
-            setInputType("password");
+        // Validate word characters (letters and spaces only)
+        if (!/^[A-Z\s]+$/.test(cleanWord)) {
+            setError("Please use letters only (no numbers or special symbols).");
+            sounds.playWrong();
+            return;
         }
-        console.log(inputType);
 
+        if (cleanWord.replace(/\s/g, '').length < 3) {
+            setError("Word must be at least 3 letters long.");
+            sounds.playWrong();
+            return;
+        }
+
+        sounds.playCorrect();
+        navigate("/play", {
+            state: {
+                wordSelected: {
+                    wordValue: cleanWord,
+                    wordHint: hint.trim() || "No hint provided - good luck!"
+                },
+                isMultiplayer: true
+            }
+        });
     }
-
-    // useeffect function 
-    // useEffect(() => {
-    //     console.log("Component first load"); // not on update
-    // }, []) // passing empty dependency array
-
-    // useEffect(() => {
-    //     console.log("Components loded and changed");
-    // })
-
-    // useEffect(() => {
-    //     console.log("component first loaded and updated value");
-    // }, [value])
-
-    // useEffect(() => {
-    //     console.log("Input type changed");
-    // }, [inputType])
-
-
-
 
     return (
-        <>
-            <TextInputForm
-                inputType={inputType}
-                handleFormSubmit={handleFormSubmit}
-                handleTextInputChange={handleTextInputChange}
-                handleHintInputChange={handleHintInputChange}
-                handleShowHideClick={handleShowHideClick}
-            />
-
-
-        </>
-    )
+        <TextInputForm
+            inputType={inputType}
+            value={value}
+            hint={hint}
+            error={error}
+            handleFormSubmit={handleFormSubmit}
+            handleTextInputChange={handleTextInputChange}
+            handleHintInputChange={handleHintInputChange}
+            handleShowHideClick={handleShowHideClick}
+            handleRandomWordFill={handleRandomWordFill}
+        />
+    );
 }
-
 
 export default TextInputFormContainer;

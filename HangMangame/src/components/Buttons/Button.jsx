@@ -1,21 +1,33 @@
-import getButtonStyling from './getButton'; // importing helper btn function
+import getButtonStyling from './getButton';
+import { sounds } from '../../utils/audioUtility';
 
+function Button({ 
+    text, 
+    type = 'button', 
+    onClickHandler, 
+    styleType = "primary", 
+    disabled = false, 
+    icon = null,
+    className = "" 
+}) {
+    const handleClick = (e) => {
+        if (!disabled) {
+            sounds.playClick();
+            onClickHandler?.(e);
+        }
+    };
 
-// Button compoent
-function Button({ text, type = 'button', onClickHandler, styleType = "primary" }) {
-    console.log(text);
     return (
         <button
-            onClick={onClickHandler}
+            onClick={handleClick}
             type={type}
-            className={`text-white px-3.75 py-2 m-1 rounded-[5px] ${getButtonStyling(styleType)}`}
+            disabled={disabled}
+            className={`inline-flex items-center justify-center gap-2 font-semibold px-5 py-2.5 rounded-xl cursor-pointer transition-all duration-150 select-none disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none ${getButtonStyling(styleType)} ${className}`}
         >
-
-            {text}
-
-        </button >
-    )
-
+            {icon && <span className="text-lg">{icon}</span>}
+            <span>{text}</span>
+        </button>
+    );
 }
 
 export default Button;
